@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segundo grau</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="vertical-center">
+            <div class="horizontal-center">
+                <h1>Segundo grau!!!</h1><br />
+
+                <div class="row">
+                    <div class="column">
+                        <table>
+                            <tr>
+                                <td>a =</td>
+                                <td><input id="bhaskara_a" type="number" />x<sup>2</sup></td>
+                            </tr>
+                            <tr>
+                                <td>b =</td>
+                                <td><input id="bhaskara_b" type="number" />x</td>
+                            </tr>
+                            <tr>
+                                <td>c =</td>
+                                <td><input id="bhaskara_c" type="number" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="column" id="resultados">
+                        
+                    </div>
+                </div>
+
+                (a)x<sup>2</sup> + (b)x + (c) = 0<br />
+                <div style="text-align: center">
+                    <input type="button" id="buscar_resultado" value="Resposta" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+    <script>
+        let buscarResultados = document.getElementById("buscar_resultado")
+        buscarResultados.onclick = function() {
+
+            if (esegundograu()) {
+                escreverEmResultados("Não é de segundo grau!!!")
+            } else {
+                let resultado = calcularResultado()
+                let textoResultado = buscarTextoResultado(resultado)
+                escreverEmResultados(textoResultado)
+            }
+        }
+    </script>
+</body>
+
+</html>
